@@ -10,7 +10,7 @@
 
 ## Link
 
-- Web App: https://fullstackneo.github.io/Work-Day-Scheduler/
+- Web App: https://fullstackneo.github.io/Work-Day-Scheduler
 - Repository: https://github.com/fullstackneo/Work-Day-Scheduler
 
 ## Languages
