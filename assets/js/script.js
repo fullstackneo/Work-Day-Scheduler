@@ -74,7 +74,9 @@ loadTask();
 $("#time-table").on("click", "p", function () {
   // console.log("click");
   var text = $(this).text().trim();
-  var textInput = $("<textarea>").addClass("col-8 col-sm-10 description").val(text);
+  var background = $(this).css("background-color");
+
+  var textInput = $("<textarea>").addClass("col-8 col-sm-10 description").val(text).css("background-color", background);
   $(this).replaceWith(textInput);
   textInput.trigger("focus");
 });
@@ -89,7 +91,6 @@ $("#time-table").on("blur", "textarea", function () {
   $(this).replaceWith(pEl);
 
   taskArray[index] = text;
-  saveTask();
 
   setBackground(index);
 });
