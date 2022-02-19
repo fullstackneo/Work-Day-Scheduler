@@ -58,6 +58,7 @@ textarea {
   margin-bottom: 2px;
 }
 
+/* hour section style  */
 .hour {
   padding: 0;
   text-align: center;
@@ -68,6 +69,7 @@ textarea {
   cursor: default;
 }
 
+/* background of the description area  */
 .past {
   background-color: #d3d3d3;
 }
@@ -79,6 +81,8 @@ textarea {
 .future {
   background-color: #77dd77;
 }
+
+
 
 .saveBtn {
   border-left: 1px solid black;
