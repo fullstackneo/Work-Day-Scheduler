@@ -35,15 +35,16 @@ textarea {
   text-align: center;
   background-color: transparent;
   color: black;
-  border-radius: 0;
   border-bottom: 10px solid black;
 }
 
 .description {
   white-space: pre-wrap;
+  word-wrap: break-word;
   padding: 10px 5px;
   margin-bottom: 0px;
   cursor: text;
+  overflow: auto;
 }
 
 .time-block {
@@ -60,7 +61,7 @@ textarea {
 .hour {
   padding: 0;
   text-align: center;
-  line-height: 80px;
+  line-height: 79px;
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #d3d3d3;
