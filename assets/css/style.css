@@ -37,7 +37,8 @@ textarea {
 
 .description {
   white-space: pre-wrap;
-  padding-top: 10px;
+  padding: 10px 5px;
+  margin-bottom: 0px;
 }
 
 .time-block {
@@ -48,7 +49,7 @@ textarea {
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;
+  margin-bottom: 2px;
 }
 
 .hour {
@@ -57,7 +58,7 @@ textarea {
   line-height: 80px;
   background-color: #ffffff;
   color: #000000;
-  border-top: 2px dashed #d3d3d3;
+  border-top: 1px dashed #d3d3d3;
 }
 
 .past {
