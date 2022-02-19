@@ -1,3 +1,23 @@
+var taskArray = new Array(9);
+
+function saveTask() {
+  localStorage.setItem("task", JSON.stringify(taskArray));
+}
+
+function loadTask() {
+  showDate();
+  createTimeTable();
+  var taskArray = localStorage.getItem("task");
+  taskArray = JSON.parse(taskArray);
+
+  for (let i = 0; i < taskArray.length; i++) {
+    var taskTextEl = $("#time-table ul").children()[i];
+
+    $(taskTextEl).find("p").text(taskArray[i]);
+  }
+}
+
+// show the current date in the title
 function showDate() {
   var date = moment().format("dddd, MMMM Do");
   $("#currentDay").text(date);
@@ -47,8 +67,8 @@ function createTimeTable() {
     setBackground(i - 9);
   }
 }
-showDate();
-createTimeTable();
+
+loadTask();
 
 // click and edit the content
 $("#time-table").on("click", "p", function () {
@@ -62,9 +82,18 @@ $("#time-table").on("click", "p", function () {
 // click other area and stop the editting
 $("#time-table").on("blur", "textarea", function () {
   var text = $(this).val().trim();
+
   var pEl = $("<p>").addClass("col-8 col-sm-10 description").text(text);
   var index = $(this).closest("li").index();
 
   $(this).replaceWith(pEl);
+
+  taskArray[index] = text;
+  saveTask();
+
   setBackground(index);
+});
+
+$(".saveBtn").on("click", function () {
+  saveTask();
 });
