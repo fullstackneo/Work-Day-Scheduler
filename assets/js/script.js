@@ -1,3 +1,8 @@
+function showDate() {
+  var date = moment().format("dddd, MMMM Do");
+  $("#currentDay").text(date);
+}
+
 // set the background of each hour
 function setBackground(index) {
   var listItemEl = $("#time-table ul").children()[index];
@@ -42,7 +47,7 @@ function createTimeTable() {
     setBackground(i - 9);
   }
 }
-
+showDate();
 createTimeTable();
 
 // click and edit the content
