@@ -39,6 +39,7 @@ textarea {
   white-space: pre-wrap;
   padding: 10px 5px;
   margin-bottom: 0px;
+  cursor: text;
 }
 
 .time-block {
@@ -59,6 +60,7 @@ textarea {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #d3d3d3;
+  cursor: default;
 }
 
 .past {
@@ -86,6 +88,7 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .saveBtn:hover {
