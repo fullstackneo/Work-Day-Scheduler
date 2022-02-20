@@ -1,19 +1,24 @@
 var taskArray = new Array(9);
 
-function saveTask() {
-  localStorage.setItem("task", JSON.stringify(taskArray));
-}
+// function saveTask() {
+
+// }
 
 function loadTask() {
   showDate();
   createTimeTable();
-  var taskArray = localStorage.getItem("task");
-  taskArray = JSON.parse(taskArray);
-
   for (let i = 0; i < taskArray.length; i++) {
     var taskTextEl = $("#time-table ul").children()[i];
-
-    $(taskTextEl).find("p").text(taskArray[i]);
+    var savedTasks = localStorage.getItem("task");
+    if (savedTasks == null) {
+      return false;
+    }
+    savedTasks = JSON.parse(savedTasks);
+    for (let i = 0; i < taskArray.length; i++) {
+      taskArray[i] = savedTasks[i];
+      var taskTextEl = $("#time-table ul").children()[i];
+      $(taskTextEl).find("p").text(savedTasks[i]);
+    }
   }
 }
 
@@ -87,14 +92,12 @@ $("#time-table").on("blur", "textarea", function () {
 
   var pEl = $("<p>").addClass("col-8 col-sm-10 description").text(text);
   var index = $(this).closest("li").index();
-
   $(this).replaceWith(pEl);
-
-  taskArray[index] = text;
-
   setBackground(index);
 });
 
 $(".saveBtn").on("click", function () {
-  saveTask();
+  var index = $(this).closest("li").index();
+  taskArray[index] = $(this).parent("li").find(".description").text().trim();
+  localStorage.setItem("task", JSON.stringify(taskArray));
 });
